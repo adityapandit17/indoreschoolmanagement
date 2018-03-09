@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Schoolmanagement</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+     <meta charset='utf-8'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="styles.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="script.js"></script>
+
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<div id='cssmenu'>
+<ul>
+<li class='active'><a href<%= link_to "Home", root_path %></a></li>
+<% if student_signed_in? %>
+<li class='active'><a href<%= link_to "All-My-Work",classstudents_path%></a></li>
+<li class='active'><a href<%= link_to "Add-New-Work", new_classstudent_path %></a></li>
+<li class='active' ><a href<%= link_to 'Student-Out',destroy_student_session_path, method: :delete%></a></li>
+<%#= link_to "My-Profile", homes_studentprofile_path %>
+<% else %>
+<li class='active' ><a href<%= link_to('Student-IN', new_student_session_path)%></a></li>
+<% end %>
+
+
+
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>

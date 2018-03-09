@@ -1,0 +1,19 @@
+  <div class="form-style-6">
+
+<%= form_with(model: classstudent, local: true) do |form| %>
+
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :classstudent_name %>
+
+    <%= form.label :detail %>
+    <%= form.text_area :detail, id: :classstudent_detail %>
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :classstudent_status %><br>
+    <%= form.submit %>
+<% end %>
+
+            
+          
+    </div>
+
+ 

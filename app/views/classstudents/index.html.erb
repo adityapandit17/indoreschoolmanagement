@@ -1,0 +1,39 @@
+
+<h2>Work Index</h2>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Detail</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+
+    <% @classstudents.each do |classstudent| %>
+      <tr>
+        <th><%= classstudent.name %></th>
+        <th><%= classstudent.detail %></th>
+        <th><%= classstudent.status %></th>
+       
+      </tr>
+    <% end %>
+</table>
+
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
